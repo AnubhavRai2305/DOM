@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Paragraph Updater</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+        }
+
+        main {
+            background: white;
+            width: 400px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        #displayText {
+            min-height: 20px;
+            font-weight: bold;
+            color: #1976d2;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            background-color: #1976d2;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <h1>Dynamic Paragraph Updater</h1>
+        <p>Your text will appear here:</p>
+        <p id="displayText"></p>
+
+        <input type="text" id="inp" placeholder="Type something..." />
+        <button id="button">Update Paragraph</button>
+    </main>
+
+    <script>
+        const inp = document.getElementById("inp");
+        const paragraph = document.getElementById("displayText");
+        const button = document.getElementById("button");
+
+        button.addEventListener("click", function () {
+            paragraph.textContent = inp.value;
+        });
+    </script>
+
+</body>
+</html>
